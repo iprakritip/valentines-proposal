@@ -5,21 +5,31 @@ import { useState } from 'react';
 
 
 function App() {
-  const [yesTextSize, setYesTextSize] = useState("md");
-  const [yesPadding, setYesPadding] = useState("1");
+  const [yesTextSize, setYesTextSize] = useState(1);
+  const [yesPadding, setYesPadding] = useState(3);
   const [buttonsDisplay, setButtonsDisplay] = useState('flex');
   const [noLabel, setNoLabel] = useState('No');
+  const [noCount, setNoCount] = useState(0);
 
   const handleYes=()=>{
     setButtonsDisplay('hidden')
   }
   const handleNo=()=>{
-    console.log('jaaaaa');
+    const noLabels=['Oye, Are you serious?','Ouchh!!, That hurt :(', 'Youre making a mistake.', 'But your mom likes me.', 'This is the wrong button -_-', '😢😢😢😢😢😢','😭😭😭😭😭']
+    if(noCount<=5){
+      setNoLabel(noLabels[noCount]);
+      setNoCount(noCount+1)
+    }else{
+      setNoLabel(noLabels[6]);
+    }
+    setYesPadding(yesPadding+7)
+    setYesTextSize(yesTextSize+0.5)
   }
+  console.log(noCount);
 
   return (
     <div className="w-screen h-screen bg-red-500 flex justify-center items-center">
-      <div className=" w-full h-full md:w-2/3 lg:w-1/3 md:h-2/3 bg-white border rounded-md relative">
+      <div className=" w-full h-full md:w-2/3 lg:w-1/3 md:h-2/3 bg-white border rounded-md relative overflow-hidden">
         <div className="absolute h-36 w-full z-10">
           <img src={rosePetals} className='h-full w-full object-cover'/>
         </div>
@@ -31,8 +41,8 @@ function App() {
           </div>
           <p className='text-center w-full font-bold text-2xl z-20 text-red-500'>Will you be my Valentine?</p>
           <div className={`${buttonsDisplay} mt-8 flex-col gap-4 text-white`}>
-            <button className={`bg-green-500 mx-16 py-1 px-${yesPadding} hover:shadow-lg text-${yesTextSize}`} onClick={handleYes}>Yes</button>
-            <button className='bg-red-800 mx-16 py-1 px-2 hover:shadow-lg' onClick={handleNo}>{noLabel}</button>
+            <button className={`bg-green-500 flex justify-center mx-16 px-2 hover:shadow-lg `} style={{padding: `${yesPadding}px`,fontSize: `${yesTextSize}rem`,}} onClick={handleYes}>Yes</button>
+            <button className='bg-red-800 mx-16 py-[3px] px-2 hover:shadow-lg text-[1rem]' onClick={handleNo}>{noLabel}</button>
           </div>
           <div className={`${buttonsDisplay==='flex'? 'hidden': 'flex'} flex-col items-center mt-8`}>
             <p className='text-xl text-red-200 text-center'>Yayyyy!!!!!!</p>
