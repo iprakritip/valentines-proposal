@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="w-screen h-screen bg-red-500 flex justify-center items-center">
-      <div className=" w-full h-full md:w-2/3 lg:w-1/3 md:h-4/5 lg:2/3 bg-white border rounded-md relative overflow-hidden">
+      <div className=" w-full h-full md:w-2/3 lg:w-1/3 md:h-4/5 lg:2/3 bg-[#fcfcfc] border rounded-md relative overflow-hidden">
         <div className="absolute h-36 w-full z-10">
           <img src={rosePetals} className='h-full w-full object-cover'/>
         </div>
