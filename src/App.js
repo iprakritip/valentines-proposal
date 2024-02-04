@@ -39,7 +39,7 @@ function App() {
               <img src={meow} className='h-full w-full object-cover'/>
             </div>
           </div>
-          <p className='text-center w-full font-bold text-2xl z-20 text-red-500'>Will you be my Valentine?</p>
+          <p className='text-center w-full font-bold text-2xl z-20 text-red-500 px-2'>Will you be my Valentine?</p>
           <div className={`${buttonsDisplay} mt-8 flex-col gap-4 text-white`}>
             <button className={`bg-green-500 flex justify-center mx-16 px-2 hover:shadow-lg `} style={{padding: `${yesPadding}px`,fontSize: `${yesTextSize}rem`,}} onClick={handleYes}>Yes</button>
             <button className='bg-red-800 mx-16 py-[3px] px-2 hover:shadow-lg text-[1rem]' onClick={handleNo}>{noLabel}</button>
