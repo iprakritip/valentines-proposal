@@ -45,7 +45,7 @@ function App() {
             <button className='bg-red-800 mx-16 py-[3px] px-2 hover:shadow-lg text-[1rem]' onClick={handleNo}>{noLabel}</button>
           </div>
           <div className={`${buttonsDisplay==='flex'? 'hidden': 'flex'} flex-col items-center mt-8`}>
-            <p className='text-xl text-red-200 text-center'>Yayyyy!!!!!!</p>
+            <p className='text-xl font-semibold text-red-400 text-center'>Yayyyy!!!!!!</p>
             <div className=' h-40 w-40'>
               <img src={hug} className='h-full w-full object-cover'/>
             </div>
